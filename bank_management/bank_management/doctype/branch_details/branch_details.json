@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-11-09 11:08:18.693101",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "bank_detail_section",
+  "bank",
+  "bank_name",
+  "branch_detail_section",
+  "branch_details",
+  "branch_code",
+  "ifsc_code",
+  "column_break_pfgk",
+  "opening_hours",
+  "operating_description",
+  "address_section",
+  "address",
+  "contact_section",
+  "contact",
+  "branch_manger_contact_information"
+ ],
+ "fields": [
+  {
+   "fieldname": "branch_details",
+   "fieldtype": "Data",
+   "label": "Branch Name"
+  },
+  {
+   "fieldname": "branch_code",
+   "fieldtype": "Data",
+   "label": "Branch Code"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Branch Contact Information",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Bank Detail"
+  },
+  {
+   "fetch_from": "bank.bank_name",
+   "fieldname": "bank_name",
+   "fieldtype": "Read Only",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "bank_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Bank detail"
+  },
+  {
+   "fieldname": "branch_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Branch Detail"
+  },
+  {
+   "fieldname": "branch_manger_contact_information",
+   "fieldtype": "Link",
+   "label": "branch Manger Contact Information",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "opening_hours",
+   "fieldtype": "Duration",
+   "label": "Operating Hours"
+  },
+  {
+   "fieldname": "operating_description",
+   "fieldtype": "Data",
+   "label": "Operating Hours Description"
+  },
+  {
+   "fieldname": "column_break_pfgk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC code"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "Branch-.{branch_details}.-"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "User Account",
+   "link_fieldname": "branch"
+  }
+ ],
+ "modified": "2023-11-09 14:29:48.086764",
+ "modified_by": "Administrator",
+ "module": "Bank Management",
+ "name": "Branch Details",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Bank Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Bank Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

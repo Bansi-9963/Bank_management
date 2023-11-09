@@ -219,3 +219,7 @@ app_license = "mit"
 # auth_hooks = [
 #	"bank_management.auth.validate"
 # ]
+
+fixtures = [
+    {"dt": "Client Script", "filters": [["module", "in", ["bank_management"]]]},
+]

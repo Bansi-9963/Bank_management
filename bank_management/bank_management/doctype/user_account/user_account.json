@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-11-09 11:53:34.967236",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "account_holder",
+  "username",
+  "branch",
+  "account_number",
+  "current_balance",
+  "account_status",
+  "account_type",
+  "transaction_section",
+  "transaction_detail"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_holder",
+   "fieldtype": "Link",
+   "label": "Account Holder",
+   "options": "User"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch ",
+   "options": "Branch Details"
+  },
+  {
+   "fieldname": "account_number",
+   "fieldtype": "Int",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "current_balance",
+   "fieldtype": "Currency",
+   "label": "Current Balance"
+  },
+  {
+   "fieldname": "account_status",
+   "fieldtype": "Select",
+   "label": "Account Status",
+   "options": "Active\ninactive"
+  },
+  {
+   "fieldname": "account_type",
+   "fieldtype": "Select",
+   "label": "Account Type",
+   "options": "Current\nSaving\nBusiness"
+  },
+  {
+   "fieldname": "transaction_detail",
+   "fieldtype": "Table",
+   "label": "Transaction Detail",
+   "options": "Bank Transaction"
+  },
+  {
+   "fieldname": "transaction_section",
+   "fieldtype": "Tab Break",
+   "label": "Transaction"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "Acc-.{username}.-"
+  },
+  {
+   "fetch_from": "account_holder.username",
+   "fieldname": "username",
+   "fieldtype": "Read Only",
+   "label": "Username"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-09 14:38:41.608596",
+ "modified_by": "Administrator",
+ "module": "Bank Management",
+ "name": "User Account",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Bank Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Bank Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
