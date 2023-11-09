@@ -10,7 +10,7 @@ def get_columns():
         _("Username") + ":Link/User:120",
         _("Branch") + ":Link/Branch Details:120",
 		_("Account number") + ":Int:120",
-		_("Account Status") + ":Select:120",
+
         _("Current Balance") + ":Currency:120"
     ]
 
@@ -21,11 +21,11 @@ def get_data(filters):
         condition += f" AND `tabUser Account`.branch = '{filters['branch']}'"
 
     return frappe.db.sql(f"""
-        SELECT 	
+        SELECT 
             username,
             branch,
 			account_number,
-			account_status,
+			
             current_balance
         FROM 
             `tabUser Account`
